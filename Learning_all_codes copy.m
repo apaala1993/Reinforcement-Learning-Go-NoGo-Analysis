@@ -411,8 +411,8 @@ for nfile=1:nfiles
                         x4=1:(ind42-ind41+1);
                         y4=y4(ind41:ind42);
 
-                        [coeffs2,~]=gng_sigmoid_fit(x2,y2,[a b c2 d]);
-                        [coeffs4,~]=gng_sigmoid_fit(x4,y4,[a b c4 d]);
+                        [coeffs2,~]=io_sigmoid_fit(x2,y2,[a b c2 d]);
+                        [coeffs4,~]=io_sigmoid_fit(x4,y4,[a b c4 d]);
                         coeffss{1,1}=coeffs2;
                         coeffss{2,1}=coeffs4;
                     
@@ -448,7 +448,7 @@ for nfile=1:nfiles
     meanLc2c{3,1}=nanmean(meanLc2c{1,1});
     meanLc2c{4,1}=nanstd(meanLc2c{1,1});
     meanLc2c{5,1}=meanLc2c{4,1}./sqrt(cond2);
-    [cs,gof]=gng_sigmoid_fit(1:(nfin2-ninit2+1),meanLc2c{3,1},[0.75 1 meanLc2c{2,1} 0.05]);
+    [cs,gof]=io_sigmoid_fit(1:(nfin2-ninit2+1),meanLc2c{3,1},[0.75 1 meanLc2c{2,1} 0.05]);
     meanLc2c{6,1}=cs;
     meanLc2c{7,1}=gof;
     
@@ -457,7 +457,7 @@ for nfile=1:nfiles
     meanLc4c{3,1}=nanmean(meanLc4c{1,1});
     meanLc4c{4,1}=nanstd(meanLc4c{1,1});
     meanLc4c{5,1}=meanLc4c{4,1}./sqrt(cond4);
-    [cs,gof]=gng_sigmoid_fit(1:(nfin4-ninit4+1),meanLc4c{3,1},[0.75 1 meanLc4c{2,1} 0.05]);
+    [cs,gof]=io_sigmoid_fit(1:(nfin4-ninit4+1),meanLc4c{3,1},[0.75 1 meanLc4c{2,1} 0.05]);
     meanLc4c{6,1}=cs;
     meanLc4c{7,1}=gof;
     
